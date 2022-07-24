@@ -88,6 +88,7 @@ public class ApplicationProperties {
                 this.userAuthorizationUri = userAuthorizationUri;
             }
         }
+
         public static class Resource {
             private String userInfoUri;
 

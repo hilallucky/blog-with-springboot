@@ -58,7 +58,7 @@ public class UserService {
         User newUser = new User();
         Optional<Authority> authority = authorityRepository.findById(AuthoritiesConstants.USER);
         Set<Authority> authorities = new HashSet<>();
-        newUser.setPassword( passwordEncoder.encode(password));
+        newUser.setPassword(passwordEncoder.encode(password));
         newUser.setEmail(email);
         newUser.setUserName(userName);
         newUser.setProvider(AuthProvider.local);
