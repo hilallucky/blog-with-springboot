@@ -39,7 +39,6 @@ public class UserDto {
         private String email;
         private Set<String> authorities;
 
-
         public void setAuthorities(Set<Authority> authorities) {
             this.authorities = authorities.stream().map(Authority::getName).collect(Collectors.toSet());
         }

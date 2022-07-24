@@ -20,8 +20,8 @@ public class CommentDto {
     private LocalDateTime createdDate;
     private LocalDateTime lastModifiedDate;
 
-
-    public CommentDto() {}
+    public CommentDto() {
+    }
 
     public CommentDto(Comment comment) {
         this.id = comment.getId();

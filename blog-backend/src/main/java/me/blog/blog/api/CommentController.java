@@ -47,7 +47,7 @@ public class CommentController {
 
     @PostMapping(value = "/comments/posts/{postId}")
     public ResponseEntity<CommentDto> saveComment(@RequestBody CommentDto commentDto,
-                                                  @CurrentUser CustomUserDetails customUserDetails) {
+            @CurrentUser CustomUserDetails customUserDetails) {
         log.debug("REST request to saveComment : {}", commentDto.getUserName());
         CommentDto returnComment = commentService.registerComment(commentDto, customUserDetails);
         return new ResponseEntity<CommentDto>(returnComment, HttpStatus.CREATED);

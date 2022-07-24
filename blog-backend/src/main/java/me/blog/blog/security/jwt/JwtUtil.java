@@ -38,13 +38,12 @@ public class JwtUtil {
 
     public JwtUtil(ApplicationProperties applicationProperties) {
         this.applicationProperties = applicationProperties;
-        this.secretKey =
-                applicationProperties.getSecurity().getJwt().getSecret();
+        this.secretKey = applicationProperties.getSecurity().getJwt().getSecret();
 
-        this.tokenValidityInMilliseconds =
-                1000 * applicationProperties.getSecurity().getJwt().getTokenValidityInSeconds();
-        this.tokenValidityInMillisecondsForRememberMe =
-                1000 * applicationProperties.getSecurity().getJwt().getTokenValidityInSecondsForRememberMe();
+        this.tokenValidityInMilliseconds = 1000
+                * applicationProperties.getSecurity().getJwt().getTokenValidityInSeconds();
+        this.tokenValidityInMillisecondsForRememberMe = 1000
+                * applicationProperties.getSecurity().getJwt().getTokenValidityInSecondsForRememberMe();
     }
 
     public String createToken(Authentication authentication) {
@@ -90,10 +89,10 @@ public class JwtUtil {
                 .parseClaimsJws(token)
                 .getBody();
 
-        Collection<? extends GrantedAuthority> authorities =
-                Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
-                        .map(SimpleGrantedAuthority::new)
-                        .collect(Collectors.toList());
+        Collection<? extends GrantedAuthority> authorities = Arrays
+                .stream(claims.get(AUTHORITIES_KEY).toString().split(","))
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
 
         User principal = new User(claims.getSubject(), "", authorities);
 
