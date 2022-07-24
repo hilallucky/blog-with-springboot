@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 public class UserDto {
 
@@ -38,7 +38,6 @@ public class UserDto {
         private Long id;
         private String email;
         private Set<String> authorities;
-
 
         public void setAuthorities(Set<Authority> authorities) {
             this.authorities = authorities.stream().map(Authority::getName).collect(Collectors.toSet());

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {

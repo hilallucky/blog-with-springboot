@@ -18,9 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @RestController
 @RequestMapping("/api")
@@ -34,7 +33,8 @@ public class PostController {
     @GetMapping(value = "/posts/{id}")
     public ResponseEntity<PostDto> getPost(@PathVariable Long id) {
         log.debug("REST request to get Post : {}", id);
-        Post post = postService.findForId(id).orElseThrow(() -> new ApiException("Post does not exist", HttpStatus.NOT_FOUND));
+        Post post = postService.findForId(id)
+                .orElseThrow(() -> new ApiException("Post does not exist", HttpStatus.NOT_FOUND));
         return new ResponseEntity<>(new PostDto(post), HttpStatus.OK);
     }
 
@@ -48,7 +48,7 @@ public class PostController {
 
     @PostMapping(value = "/posts")
     public ResponseEntity<PostDto> registerPost(@RequestBody PostDto postDto,
-                                                @CurrentUser CustomUserDetails customUserDetails) {
+            @CurrentUser CustomUserDetails customUserDetails) {
         log.debug("REST request to save Post : {}", postDto);
         if (postDto.getId() != null) {
             throw new ApiException("A new post cannot already have an ID", HttpStatus.CONFLICT);
@@ -60,7 +60,7 @@ public class PostController {
 
     @PutMapping(value = "/posts/{id}")
     public ResponseEntity<PostDto> editPost(@PathVariable Long id,
-                                            @RequestBody PostDto postDto) {
+            @RequestBody PostDto postDto) {
         log.debug("REST request to edit Post : {}", postDto);
         Optional<Post> post = postService.findForId(id);
         if (!post.isPresent()) {

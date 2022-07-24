@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { PostPage, PostListPage, EditorPage, NotFoundPage } from 'pages';
-import LoginContainer from 'containers/LoginContainer'
 import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import { bindActionCreators } from "redux";
-import * as authActions from "store/modules/auth";
-import OAuth2RedirectHandler from 'components/Login/oauth2/OAuth2RedirectHandler';
+import OAuth2RedirectHandler from '../components/Login/oauth2/OAuth2RedirectHandler';
+import LoginContainer from '../containers/LoginContainer';
+import { EditorPage, NotFoundPage, PostListPage, PostPage } from '../pages';
+import AboutPage from '../pages/About';
+import * as authActions from '../store/modules/auth';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
         <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>      
         <Route path="/login" component={LoginContainer} />       
         <Switch>
+          <Route path="/about" component={AboutPage} />
           <Route path="/pages/:page" component={PostListPage} />
           <Route path="/posts/:id" component={PostPage} />
           <Route path="/editor/:id?" component={EditorPage} />          
@@ -30,6 +32,7 @@ class App extends Component {
     );
   }
 };
+
 
 export default connect(
   state => ({   

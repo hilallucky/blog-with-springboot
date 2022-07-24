@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Configuration
 @ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
@@ -88,6 +88,7 @@ public class ApplicationProperties {
                 this.userAuthorizationUri = userAuthorizationUri;
             }
         }
+
         public static class Resource {
             private String userInfoUri;
 

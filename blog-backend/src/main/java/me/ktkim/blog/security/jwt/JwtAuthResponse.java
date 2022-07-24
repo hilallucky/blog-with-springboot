@@ -3,7 +3,7 @@ package me.ktkim.blog.security.jwt;
 import me.ktkim.blog.model.BaseModel;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 public class JwtAuthResponse extends BaseModel {
 

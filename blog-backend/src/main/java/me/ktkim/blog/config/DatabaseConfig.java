@@ -8,14 +8,15 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 public class DatabaseConfig {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     @Bean(destroyMethod = "close")
-    public HikariDataSource dataSource(DataSourceProperties dataSourceProperties, ApplicationProperties applicationProperties) {
+    public HikariDataSource dataSource(DataSourceProperties dataSourceProperties,
+            ApplicationProperties applicationProperties) {
         log.debug("Configuring Datasource");
 
         HikariConfig config = new HikariConfig();

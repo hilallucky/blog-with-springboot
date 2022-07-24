@@ -23,6 +23,9 @@ Server Build      | Maven
 -  Install Node.js from the Node.js website
 -  Clone the repo `git clone https://github.com/keumtae-kim/spring-boot-react-blog.git`
 
+### Add JAVA_HOME
+### Add M2_HOME
+
 ### Backend
 - Go to your project folder from your terminal
 - cd blog-backend
