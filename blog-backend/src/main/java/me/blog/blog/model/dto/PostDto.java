@@ -21,9 +21,10 @@ public class PostDto {
     private String lastModifiedBy;
     private LocalDateTime lastModifiedDate;
 
-    public PostDto () {}
+    public PostDto() {
+    }
 
-    public PostDto (Post post) {
+    public PostDto(Post post) {
         this.id = post.getId();
         this.title = post.getTitle();
         this.body = post.getBody();
