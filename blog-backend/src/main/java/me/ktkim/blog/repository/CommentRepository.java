@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {

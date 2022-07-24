@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Entity
 @Table(name = "post")
@@ -60,7 +60,8 @@ public class Post {
     @Column(name = "last_modified_date")
     private LocalDateTime lastModifiedDate = LocalDateTime.now();
 
-    public Post() {}
+    public Post() {
+    }
 
     public Post(Long id) {
         this.id = id;

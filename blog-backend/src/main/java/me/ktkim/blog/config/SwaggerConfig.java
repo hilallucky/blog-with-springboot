@@ -13,7 +13,7 @@ import springfox.documentation.swagger.web.SecurityConfiguration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Configuration
 @EnableSwagger2
@@ -34,6 +34,7 @@ public class SwaggerConfig {
     @Bean
     public SecurityConfiguration security() {
         return new SecurityConfiguration(null, null, null, null,
-                "Bearer " + jwtUtil.createAdminToken(), ApiKeyVehicle.HEADER, "Authorization", "," /* scope separator */);
+                "Bearer " + jwtUtil.createAdminToken(), ApiKeyVehicle.HEADER, "Authorization",
+                "," /* scope separator */);
     }
 }

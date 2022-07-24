@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Entity
 @Table(name = "user")
@@ -59,10 +59,9 @@ public class User extends BaseModel {
 
     @JsonIgnore
     @ManyToMany
-    @JoinTable(
-            name = "user_authority",
-            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})
+    @JoinTable(name = "user_authority", joinColumns = {
+            @JoinColumn(name = "user_id", referencedColumnName = "user_id") }, inverseJoinColumns = {
+                    @JoinColumn(name = "authority_name", referencedColumnName = "name") })
 
     @BatchSize(size = 20)
     private Set<Authority> authorities = new HashSet<>();
@@ -91,7 +90,8 @@ public class User extends BaseModel {
     @JsonIgnore
     private LocalDateTime lastModifiedDate = LocalDateTime.now();
 
-    public User() {}
+    public User() {
+    }
 
     public User(Long id) {
         this.id = id;

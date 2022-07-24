@@ -1,7 +1,7 @@
 package me.ktkim.blog.common.util;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 public class AuthoritiesConstants {
 

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 public class Http401ErrorEntryPoint implements AuthenticationEntryPoint {
 

@@ -6,7 +6,7 @@ import me.ktkim.blog.model.domain.Post;
 import java.time.LocalDateTime;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Data
 public class PostDto {
@@ -21,9 +21,10 @@ public class PostDto {
     private String lastModifiedBy;
     private LocalDateTime lastModifiedDate;
 
-    public PostDto () {}
+    public PostDto() {
+    }
 
-    public PostDto (Post post) {
+    public PostDto(Post post) {
         this.id = post.getId();
         this.title = post.getTitle();
         this.body = post.getBody();

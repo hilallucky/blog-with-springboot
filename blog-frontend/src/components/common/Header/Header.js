@@ -13,7 +13,7 @@ import {
 import styles from './Header.scss';
 import classNames from 'classnames/bind';
 import AccountMenu from './Menu/account';
-import homeBg from 'images/home-bg.jpg';
+import homeBg from '../../../images/home-bg.jpg';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
@@ -44,10 +44,10 @@ class Header extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="navbar-nav ml-auto">
                 <NavItem>
-                  <NavLink to="/login">About</NavLink>
+                  <NavLink href="/about">About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/contact">Contact</NavLink>
+                  <NavLink href="/contact">Contact</NavLink>
                 </NavItem>
                 <AccountMenu isAuthenticated={isAuthenticated} onLogout={onLogout} />
               </Nav>

@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Optional;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 public class SecurityUtil {
 

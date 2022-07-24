@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import * as authActions from "store/modules/auth";
+import * as authActions from "../../../store/modules/auth";
 
 class OAuth2RedirectHandler extends Component {
     getUrlParameter(name) {

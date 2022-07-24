@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {

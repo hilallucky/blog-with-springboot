@@ -26,7 +26,7 @@ import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequ
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @Configuration
 @EnableWebSecurity
@@ -91,7 +91,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public SimpleCorsFilter simpleCorsFilter() {
         return new SimpleCorsFilter();
     }
-
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -159,10 +158,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /*
-        By default, Spring OAuth2 uses HttpSessionOAuth2AuthorizationRequestRepository to save
-        the authorization request. But, since our service is stateless, we can't save it in
-        the session. We'll save the request in a Base64 encoded cookie instead.
-    */
+     * By default, Spring OAuth2 uses
+     * HttpSessionOAuth2AuthorizationRequestRepository to save
+     * the authorization request. But, since our service is stateless, we can't save
+     * it in
+     * the session. We'll save the request in a Base64 encoded cookie instead.
+     */
     private AuthorizationRequestRepository<OAuth2AuthorizationRequest> cookieAuthorizationRequestRepository() {
         return new HttpCookieOAuth2AuthorizationRequestRepository();
     }

@@ -29,7 +29,7 @@ import javax.validation.Valid;
 import java.util.Collections;
 
 /**
- * @author Kim Keumtae
+ * @author Hilal
  */
 @RestController
 @RequestMapping("/auth")
@@ -51,14 +51,13 @@ public class AuthController {
 
     private final String AUTHORIZATION_HEADER = "Authorization";
 
-
     @PostMapping(value = "/authenticate")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginRequest request
-            , @RequestParam(value = "rememberMe", defaultValue = "false", required = false) boolean rememberMe
-            , HttpServletResponse response) throws AuthenticationException {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginRequest request,
+            @RequestParam(value = "rememberMe", defaultValue = "false", required = false) boolean rememberMe,
+            HttpServletResponse response) throws AuthenticationException {
         log.debug("REST request to authenticate : {}", request.getEmail());
-        UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                request.getEmail(), request.getPassword());
 
         try {
             Authentication authentication = this.authenticationManager.authenticate(authenticationToken);
@@ -84,7 +83,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         log.debug("REST request to signup : {}", signUpRequest.getEmail());
-        if(userRepository.existsByEmail(signUpRequest.getEmail())) {
+        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
             throw new RuntimeException("Email address already in use.");
         }
 
